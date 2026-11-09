@@ -21,7 +21,7 @@ presubmits:
       preset-goproxy: "true"
     spec:
       containers:
-        - image: ghcr.io/kcp-dev/infra/build:1.26.4-1
+        - image: ghcr.io/kcp-dev/infra/build:1.26.10-1
           command:
             - hack/ci/verify.sh
           resources:
@@ -37,7 +37,7 @@ presubmits:
       preset-goproxy: "true"
     spec:
       containers:
-        - image: ghcr.io/kcp-dev/infra/build:1.26.4-1
+        - image: ghcr.io/kcp-dev/infra/build:1.26.10-1
           command:
             - make
             - lint
@@ -76,7 +76,7 @@ presubmits:
       preset-goproxy: "true"
     spec:
       containers:
-        - image: ghcr.io/kcp-dev/infra/build:1.26.4-1
+        - image: ghcr.io/kcp-dev/infra/build:1.26.10-1
           command:
             - make
             - test
@@ -96,16 +96,30 @@ presubmits:
       preset-goproxy: "true"
     spec:
       containers:
-        - image: ghcr.io/kcp-dev/infra/build:1.26.4-1
+        - image: ghcr.io/kcp-dev/infra/build:1.26.10-1
           command:
             - hack/ci/run-e2e-tests.sh
           env:
             - name: KCP_VERSION
               value: "0.29.3"
+            # kcp state (etcd included) lives on the RAM-backed kcp-data volume
+            # so etcd is not stalled by node disk contention. Use a subdirectory:
+            # the script rm -rf's it, which fails on the mount point itself.
+            - name: KCP_ROOT_DIRECTORY
+              value: /kcp-data/kcp
           resources:
             requests:
-              memory: 4Gi
+              # includes the kcp-data tmpfs, which is charged to the pod
+              memory: 6Gi
               cpu: 2
+          volumeMounts:
+            - name: kcp-data
+              mountPath: /kcp-data
+      volumes:
+        - name: kcp-data
+          emptyDir:
+            medium: Memory
+            sizeLimit: 2Gi
 
   - name: pull-api-syncagent-test-e2e-kcp-0.30
     always_run: true
@@ -115,16 +129,30 @@ presubmits:
       preset-goproxy: "true"
     spec:
       containers:
-        - image: ghcr.io/kcp-dev/infra/build:1.26.4-1
+        - image: ghcr.io/kcp-dev/infra/build:1.26.10-1
           command:
             - hack/ci/run-e2e-tests.sh
           env:
             - name: KCP_VERSION
               value: "0.30.3"
+            # kcp state (etcd included) lives on the RAM-backed kcp-data volume
+            # so etcd is not stalled by node disk contention. Use a subdirectory:
+            # the script rm -rf's it, which fails on the mount point itself.
+            - name: KCP_ROOT_DIRECTORY
+              value: /kcp-data/kcp
           resources:
             requests:
-              memory: 4Gi
+              # includes the kcp-data tmpfs, which is charged to the pod
+              memory: 6Gi
               cpu: 2
+          volumeMounts:
+            - name: kcp-data
+              mountPath: /kcp-data
+      volumes:
+        - name: kcp-data
+          emptyDir:
+            medium: Memory
+            sizeLimit: 2Gi
 
   - name: pull-api-syncagent-test-e2e-kcp-0.31
     always_run: true
@@ -134,16 +162,30 @@ presubmits:
       preset-goproxy: "true"
     spec:
       containers:
-        - image: ghcr.io/kcp-dev/infra/build:1.26.4-1
+        - image: ghcr.io/kcp-dev/infra/build:1.26.10-1
           command:
             - hack/ci/run-e2e-tests.sh
           env:
             - name: KCP_VERSION
               value: "0.31.0"
+            # kcp state (etcd included) lives on the RAM-backed kcp-data volume
+            # so etcd is not stalled by node disk contention. Use a subdirectory:
+            # the script rm -rf's it, which fails on the mount point itself.
+            - name: KCP_ROOT_DIRECTORY
+              value: /kcp-data/kcp
           resources:
             requests:
-              memory: 4Gi
+              # includes the kcp-data tmpfs, which is charged to the pod
+              memory: 6Gi
               cpu: 2
+          volumeMounts:
+            - name: kcp-data
+              mountPath: /kcp-data
+      volumes:
+        - name: kcp-data
+          emptyDir:
+            medium: Memory
+            sizeLimit: 2Gi
 
   - name: pull-api-syncagent-test-e2e-kcp-0.32
     always_run: true
@@ -153,13 +195,27 @@ presubmits:
       preset-goproxy: "true"
     spec:
       containers:
-        - image: ghcr.io/kcp-dev/infra/build:1.26.4-1
+        - image: ghcr.io/kcp-dev/infra/build:1.26.10-1
           command:
             - hack/ci/run-e2e-tests.sh
           env:
             - name: KCP_VERSION
               value: "0.32.0"
+            # kcp state (etcd included) lives on the RAM-backed kcp-data volume
+            # so etcd is not stalled by node disk contention. Use a subdirectory:
+            # the script rm -rf's it, which fails on the mount point itself.
+            - name: KCP_ROOT_DIRECTORY
+              value: /kcp-data/kcp
           resources:
             requests:
-              memory: 4Gi
+              # includes the kcp-data tmpfs, which is charged to the pod
+              memory: 6Gi
               cpu: 2
+          volumeMounts:
+            - name: kcp-data
+              mountPath: /kcp-data
+      volumes:
+        - name: kcp-data
+          emptyDir:
+            medium: Memory
+            sizeLimit: 2Gi

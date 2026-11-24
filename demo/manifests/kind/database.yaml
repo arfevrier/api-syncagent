@@ -1,0 +1,8 @@
+apiVersion: database.internal.demo/v1alpha1
+kind: Database
+metadata:
+  name: customer-portal-db
+  namespace: demo
+spec:
+  engine: PostgreSQL
+  storageGiB: 20

@@ -1,0 +1,15 @@
+{
+  "name": "pr194-service-service-db",
+  "finalizers": [
+    "syncagent.kcp.io/cleanup"
+  ],
+  "deletion": "2026-11-24T16:08:40Z",
+  "spec": {
+    "engine": "PostgreSQL",
+    "storageGiB": 31
+  },
+  "status": {
+    "endpoint": "pr194-service-service-db.demo.svc:5432",
+    "phase": "Ready-service-service"
+  }
+}

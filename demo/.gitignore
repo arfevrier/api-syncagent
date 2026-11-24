@@ -1,0 +1,4 @@
+.state/
+kubeconfigs/
+__pycache__/
+*.pyc

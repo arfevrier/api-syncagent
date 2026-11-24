@@ -1,0 +1,49 @@
+{
+  "timestamp_utc": "2026-11-24T16:22:12.690371+00:00",
+  "feature_commit": "c4d77f7f44b8f44fac5fd1ce864b19a787b8aa82",
+  "integration_fix": "f0db0c614531ecd6797dabe7292b144775d3df2f",
+  "versions": {
+    "kind": "v1.37.0",
+    "kcp": "v1.36.0+kcp-v0.32.0"
+  },
+  "binary_sha256": {
+    "current": "01d70fc602ac8f7b7bf88a4cffba605a70a2b0f30c764a6a28580f5470e4074c",
+    "with_ssa_fix": "a6297ace85f048dbf336f617adf3fce30d52e3acad96d613acd252f25bd6412f"
+  },
+  "default_mode_passed": 9,
+  "unique_admission_checks": 9,
+  "standalone_ssa_passed": 2,
+  "standalone_ssa_known_issues": 2,
+  "combined_ssa_passed": 4,
+  "by_owner_passed": true,
+  "fresh_repository_e2e_passed": [
+    "TestValidateRelatedResourceSpec",
+    "TestSyncRelatedObjectStatusFromKcp",
+    "TestSyncRelatedObjectStatusBackToKcp",
+    "TestSyncRelatedObjectStatusFromService",
+    "TestSyncRelatedObjectStatusFromKcpWithServiceOrigin",
+    "TestSyncRelatedObjectStatusNotSyncedByDefault"
+  ],
+  "hot_reconfiguration_orphan": {
+    "name": "pr194-service-service-db",
+    "finalizers": [
+      "syncagent.kcp.io/cleanup"
+    ],
+    "deletion": "2026-11-24T16:08:40Z",
+    "spec": {
+      "engine": "PostgreSQL",
+      "storageGiB": 31
+    },
+    "status": {
+      "endpoint": "pr194-service-service-db.demo.svc:5432",
+      "phase": "Ready-service-service"
+    }
+  },
+  "health_probe_observation": {
+    "readyz": 404,
+    "healthz": 404
+  },
+  "global_kubectl_context": "[EXISTING_CONTEXT]",
+  "dedicated_environment_cleaned_up": true,
+  "existing_kind_cluster_preserved": "[EXISTING_CLUSTER]"
+}

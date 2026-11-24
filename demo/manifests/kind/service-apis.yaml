@@ -1,0 +1,73 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: applications.platform.internal.demo
+spec:
+  group: platform.internal.demo
+  scope: Namespaced
+  names:
+    plural: applications
+    singular: application
+    kind: Application
+    listKind: ApplicationList
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              required:
+                - databaseName
+              properties:
+                databaseName:
+                  type: string
+                replicas:
+                  type: integer
+                  minimum: 1
+            status:
+              type: object
+              x-kubernetes-preserve-unknown-fields: true
+      subresources:
+        status: {}
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: databases.database.internal.demo
+spec:
+  group: database.internal.demo
+  scope: Namespaced
+  names:
+    plural: databases
+    singular: database
+    kind: Database
+    listKind: DatabaseList
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                engine:
+                  type: string
+                storageGiB:
+                  type: integer
+                  minimum: 1
+            status:
+              type: object
+              properties:
+                phase:
+                  type: string
+                endpoint:
+                  type: string
+      subresources:
+        status: {}

@@ -1,0 +1,40 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: api-syncagent-demo-provider-access
+rules:
+  - nonResourceURLs:
+      - /
+    verbs:
+      - access
+  - apiGroups:
+      - apis.kcp.io
+    resources:
+      - apiexports
+      - apiexportendpointslices
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - apis.kcp.io
+    resources:
+      - apiexports/content
+    resourceNames:
+      - applications
+      - databases
+    verbs:
+      - "*"
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: api-syncagent-demo-provider-access
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: api-syncagent-demo-provider-access
+subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: kcp-admin

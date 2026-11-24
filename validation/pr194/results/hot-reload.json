@@ -1,0 +1,106 @@
+{
+  "label": "c4d77f7-client-side",
+  "binary": "${RUN_STATE}/bin/api-syncagent",
+  "ssa": false,
+  "results": [
+    {
+      "case": "kcp-kcp",
+      "seconds": 15.57,
+      "status": "PASS",
+      "spec_origin": "kcp",
+      "status_origin": "kcp",
+      "syncStatus": true,
+      "explicit_status_origin": "kcp",
+      "watch": true,
+      "spec_storageGiB": 31,
+      "authority_status": {
+        "endpoint": "pr194-kcp-kcp-db.demo.svc:5432",
+        "phase": "Ready-kcp-kcp"
+      },
+      "receiver_status": {
+        "endpoint": "pr194-kcp-kcp-db.demo.svc:5432",
+        "phase": "Ready-kcp-kcp"
+      },
+      "primary_changed_during_status_sync": false,
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true,
+      "primary_deletion_cleanup": true
+    },
+    {
+      "case": "kcp-service",
+      "seconds": 12.11,
+      "status": "PASS",
+      "spec_origin": "kcp",
+      "status_origin": "service",
+      "syncStatus": true,
+      "explicit_status_origin": "service",
+      "watch": true,
+      "spec_storageGiB": 31,
+      "authority_status": {
+        "endpoint": "pr194-kcp-service-db.demo.svc:5432",
+        "phase": "Ready-kcp-service"
+      },
+      "receiver_status": {
+        "endpoint": "pr194-kcp-service-db.demo.svc:5432",
+        "phase": "Ready-kcp-service"
+      },
+      "primary_changed_during_status_sync": false,
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true,
+      "primary_deletion_cleanup": true
+    },
+    {
+      "case": "service-service",
+      "seconds": 131.26,
+      "status": "FAIL",
+      "error": "test database cleanup"
+    }
+  ],
+  "admission": [
+    {
+      "case": "legacy-kcp-no-watch",
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "case": "legacy-service-with-watch",
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "case": "new-reverse-with-watch",
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "case": "reverse-without-watch",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "origin-without-enable",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "origin-with-disabled-enable",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "unknown-status-origin",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "empty-watch",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "string-syncStatus-rejected",
+      "accepted": false,
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+apiVersion: apis.kcp.io/v1alpha1
+kind: APIResourceSchema
+metadata:
+  name: v1alpha1.databases.databases.demo.kcp.io
+spec:
+  group: databases.demo.kcp.io
+  names:
+    plural: databases
+    singular: database
+    kind: Database
+    listKind: DatabaseList
+  scope: Namespaced
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        type: object
+        properties:
+          apiVersion:
+            type: string
+          kind:
+            type: string
+          metadata:
+            type: object
+          spec:
+            type: object
+            properties:
+              engine:
+                type: string
+              storageGiB:
+                type: integer
+                minimum: 1
+          status:
+            type: object
+            properties:
+              phase:
+                type: string
+              endpoint:
+                type: string
+      subresources:
+        status: {}
+---
+apiVersion: apis.kcp.io/v1alpha1
+kind: APIExport
+metadata:
+  name: databases
+spec:
+  latestResourceSchemas:
+    - v1alpha1.databases.databases.demo.kcp.io
+---
+apiVersion: apis.kcp.io/v1alpha1
+kind: APIExportEndpointSlice
+metadata:
+  name: databases
+spec:
+  export:
+    name: databases

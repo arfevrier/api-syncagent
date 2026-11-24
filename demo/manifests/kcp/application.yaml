@@ -1,0 +1,8 @@
+apiVersion: applications.demo.kcp.io/v1alpha1
+kind: Application
+metadata:
+  name: customer-portal
+  namespace: default
+spec:
+  replicas: 2
+  databaseName: customer-portal-db

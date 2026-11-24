@@ -1,0 +1,256 @@
+{
+  "label": "c4d77f7-client-side",
+  "binary": "${RUN_STATE}/bin/api-syncagent",
+  "ssa": false,
+  "agent_restarted_between_scenarios": true,
+  "results": [
+    {
+      "case": "kcp-kcp",
+      "seconds": 12.94,
+      "status": "PASS",
+      "spec_origin": "kcp",
+      "status_origin": "kcp",
+      "syncStatus": true,
+      "explicit_status_origin": "kcp",
+      "watch": true,
+      "spec_storageGiB": 31,
+      "authority_status": {
+        "endpoint": "pr194-kcp-kcp-db.demo.svc:5432",
+        "phase": "Ready-kcp-kcp"
+      },
+      "receiver_status": {
+        "endpoint": "pr194-kcp-kcp-db.demo.svc:5432",
+        "phase": "Ready-kcp-kcp"
+      },
+      "primary_changed_during_status_sync": false,
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true,
+      "primary_deletion_cleanup": true
+    },
+    {
+      "case": "kcp-service",
+      "seconds": 7.91,
+      "status": "PASS",
+      "spec_origin": "kcp",
+      "status_origin": "service",
+      "syncStatus": true,
+      "explicit_status_origin": "service",
+      "watch": true,
+      "spec_storageGiB": 31,
+      "authority_status": {
+        "endpoint": "pr194-kcp-service-db.demo.svc:5432",
+        "phase": "Ready-kcp-service"
+      },
+      "receiver_status": {
+        "endpoint": "pr194-kcp-service-db.demo.svc:5432",
+        "phase": "Ready-kcp-service"
+      },
+      "primary_changed_during_status_sync": false,
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true,
+      "primary_deletion_cleanup": true
+    },
+    {
+      "case": "service-service",
+      "seconds": 6.96,
+      "status": "PASS",
+      "spec_origin": "service",
+      "status_origin": "service",
+      "syncStatus": true,
+      "explicit_status_origin": "service",
+      "watch": true,
+      "spec_storageGiB": 31,
+      "authority_status": {
+        "endpoint": "pr194-service-service-db.demo.svc:5432",
+        "phase": "Ready-service-service"
+      },
+      "receiver_status": {
+        "endpoint": "pr194-service-service-db.demo.svc:5432",
+        "phase": "Ready-service-service"
+      },
+      "primary_changed_during_status_sync": false,
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true,
+      "primary_deletion_cleanup": true
+    },
+    {
+      "case": "service-kcp",
+      "seconds": 7.04,
+      "status": "PASS",
+      "spec_origin": "service",
+      "status_origin": "kcp",
+      "syncStatus": true,
+      "explicit_status_origin": "kcp",
+      "watch": true,
+      "spec_storageGiB": 31,
+      "authority_status": {
+        "endpoint": "pr194-service-kcp-db.demo.svc:5432",
+        "phase": "Ready-service-kcp"
+      },
+      "receiver_status": {
+        "endpoint": "pr194-service-kcp-db.demo.svc:5432",
+        "phase": "Ready-service-kcp"
+      },
+      "primary_changed_during_status_sync": false,
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true,
+      "primary_deletion_cleanup": true
+    },
+    {
+      "case": "legacy-kcp",
+      "seconds": 12.91,
+      "status": "PASS",
+      "spec_origin": "kcp",
+      "status_origin": "kcp",
+      "syncStatus": true,
+      "explicit_status_origin": null,
+      "watch": true,
+      "spec_storageGiB": 31,
+      "authority_status": {
+        "endpoint": "pr194-legacy-kcp-db.demo.svc:5432",
+        "phase": "Ready-legacy-kcp"
+      },
+      "receiver_status": {
+        "endpoint": "pr194-legacy-kcp-db.demo.svc:5432",
+        "phase": "Ready-legacy-kcp"
+      },
+      "primary_changed_during_status_sync": false,
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true,
+      "primary_deletion_cleanup": true
+    },
+    {
+      "case": "legacy-service",
+      "seconds": 8.32,
+      "status": "PASS",
+      "spec_origin": "service",
+      "status_origin": "service",
+      "syncStatus": true,
+      "explicit_status_origin": null,
+      "watch": true,
+      "spec_storageGiB": 31,
+      "authority_status": {
+        "endpoint": "pr194-legacy-service-db.demo.svc:5432",
+        "phase": "Ready-legacy-service"
+      },
+      "receiver_status": {
+        "endpoint": "pr194-legacy-service-db.demo.svc:5432",
+        "phase": "Ready-legacy-service"
+      },
+      "primary_changed_during_status_sync": false,
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true,
+      "primary_deletion_cleanup": true
+    },
+    {
+      "case": "disabled",
+      "seconds": 14.98,
+      "status": "PASS",
+      "spec_origin": "service",
+      "status_origin": "service",
+      "syncStatus": false,
+      "explicit_status_origin": null,
+      "watch": true,
+      "spec_storageGiB": 31,
+      "authority_status": {
+        "endpoint": "pr194-disabled-db.demo.svc:5432",
+        "phase": "Ready-disabled"
+      },
+      "receiver_status": null,
+      "primary_changed_during_status_sync": true,
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true,
+      "primary_deletion_cleanup": true
+    },
+    {
+      "case": "omitted",
+      "seconds": 13.57,
+      "status": "PASS",
+      "spec_origin": "service",
+      "status_origin": "service",
+      "syncStatus": null,
+      "explicit_status_origin": null,
+      "watch": true,
+      "spec_storageGiB": 31,
+      "authority_status": {
+        "endpoint": "pr194-omitted-db.demo.svc:5432",
+        "phase": "Ready-omitted"
+      },
+      "receiver_status": null,
+      "primary_changed_during_status_sync": true,
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true,
+      "primary_deletion_cleanup": true
+    },
+    {
+      "case": "no-watch",
+      "seconds": 37.07,
+      "status": "PASS",
+      "spec_origin": "kcp",
+      "status_origin": "kcp",
+      "syncStatus": true,
+      "explicit_status_origin": "kcp",
+      "watch": false,
+      "spec_storageGiB": 31,
+      "authority_status": {
+        "endpoint": "pr194-no-watch-db.demo.svc:5432",
+        "phase": "Ready-no-watch"
+      },
+      "receiver_status": {
+        "endpoint": "pr194-no-watch-db.demo.svc:5432",
+        "phase": "Ready-no-watch"
+      },
+      "primary_changed_during_status_sync": true,
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true,
+      "primary_deletion_cleanup": true
+    }
+  ],
+  "admission": [
+    {
+      "case": "legacy-kcp-no-watch",
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "case": "legacy-service-with-watch",
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "case": "new-reverse-with-watch",
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "case": "reverse-without-watch",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "origin-without-enable",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "origin-with-disabled-enable",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "unknown-status-origin",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "empty-watch",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "string-syncStatus-rejected",
+      "accepted": false,
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "label": "c4d77f7-by-owner-ssa",
+  "binary": "${RUN_STATE}/bin/api-syncagent",
+  "ssa": true,
+  "results": [
+    {
+      "case": "by-owner-reverse",
+      "status": "PASS",
+      "byOwner_uids_are_cluster_local": true,
+      "kcp_owner_installed_manually": true,
+      "spec_storageGiB": 31,
+      "service_status": {
+        "endpoint": "updated.demo.svc:5432",
+        "phase": "ReadyAgain"
+      },
+      "kcp_status": {
+        "endpoint": "updated.demo.svc:5432",
+        "phase": "ReadyAgain"
+      },
+      "primary_spec_forwarded": true,
+      "primary_status_back_synced": true
+    }
+  ]
+}

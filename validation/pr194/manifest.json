@@ -1,0 +1,299 @@
+{
+  "feature_commit": "c4d77f7f44b8f44fac5fd1ce864b19a787b8aa82",
+  "integration_fix": "f0db0c614531ecd6797dabe7292b144775d3df2f",
+  "published_at_utc": "2026-11-24T16:36:49.655065+00:00",
+  "description": "Publishing copy of previously recorded runs; no tests were rerun for this archive.",
+  "normalization": "Workstation paths, private IPv4 addresses and unrelated context names were replaced. Timestamps, verdicts and test payloads were retained.",
+  "excluded": [
+    "kubeconfigs",
+    "kcp server state and raw server log",
+    "certificates and keys",
+    "binaries",
+    "PID files",
+    "machine-specific environment file"
+  ],
+  "credential_pattern_findings": 0,
+  "files": [
+    {
+      "file": "summary.json",
+      "source_file": "validation-summary.json",
+      "source_sha256": "0469919e8d41c6cdd29a827d15f092beadaa06cc83256023bb0f0f1d06a58b46",
+      "published_sha256": "c29bdf3d77c8ce620000dd5839ef1e00c52d6aca40f231745ead388256e9dc17",
+      "normalization": {
+        "workstation_context_names": 2
+      }
+    },
+    {
+      "file": "results/client.json",
+      "source_file": "c4d77f7-client-side.json",
+      "source_sha256": "86a8d7b64afac7e3f3b83998abd729f1980f0a5c5c6c53d028a43dd679c52b73",
+      "published_sha256": "7556ac63493b6a2cffb1380da6e13a576d64d9c935f8f4861ee8768ba64863fe",
+      "normalization": {
+        "workstation_paths": 1
+      }
+    },
+    {
+      "file": "results/ssa.json",
+      "source_file": "c4d77f7-ssa-standalone.json",
+      "source_sha256": "22ba9210f48360d481d8d179cc5338869fae4728104b4a1bf9409c2cb1dbf15e",
+      "published_sha256": "47ac58f7dc15203819622a7730f9a44f9d38bdd2a3be6faf484a14aaf59d76b1",
+      "normalization": {
+        "workstation_paths": 1
+      }
+    },
+    {
+      "file": "results/combined.json",
+      "source_file": "c4d77f7-plus-f0db0c6-ssa.json",
+      "source_sha256": "731ea867c8dc7698acbf08d4779bc9b59bf0c81688ee86b31554be3986a6fb3c",
+      "published_sha256": "db96f4d4af8d1cbec733262dea3b0a773a99282142102a96e8659a6553b6e197",
+      "normalization": {
+        "workstation_paths": 1
+      }
+    },
+    {
+      "file": "results/by-owner.json",
+      "source_file": "c4d77f7-by-owner-ssa.json",
+      "source_sha256": "b0ebd30df72d25cd2d8e40678b19d20276dd3b68c5beae6198e7876f8951573a",
+      "published_sha256": "9c40f4035f667dbdaafb0d3cca972eca6783145c87ca6c010f0586b8275b2c04",
+      "normalization": {
+        "workstation_paths": 1
+      }
+    },
+    {
+      "file": "results/admission.json",
+      "source_file": "admission-diagnostics.json",
+      "source_sha256": "125468a0a193a1d24d0341145a8020f9e8dd64883e036b12b68b8a180bb5dc34",
+      "published_sha256": "125468a0a193a1d24d0341145a8020f9e8dd64883e036b12b68b8a180bb5dc34",
+      "normalization": {}
+    },
+    {
+      "file": "results/hot-reload.json",
+      "source_file": "c4d77f7-hot-reconfiguration.json",
+      "source_sha256": "e47d395a4e11b9495247928782a19dde41ad0e555b819fe3e8b099800404c188",
+      "published_sha256": "83a5f865048a6943af9160c1c8b44c079d41aca52e4f98314644e2d9ed06228a",
+      "normalization": {
+        "workstation_paths": 1
+      }
+    },
+    {
+      "file": "results/orphan.json",
+      "source_file": "hot-reconfiguration-orphan.json",
+      "source_sha256": "ce941a8802ecfb428d6ec864ceb00b16dfef5472ad69c3894098c188e1a6058c",
+      "published_sha256": "ce941a8802ecfb428d6ec864ceb00b16dfef5472ad69c3894098c188e1a6058c",
+      "normalization": {}
+    },
+    {
+      "file": "logs/e2e.log",
+      "source_file": "status-e2e-current.log",
+      "source_sha256": "e761861c40c0fcbe3b4226521deaab135150b8f7bbd4a40b5f34db3a71b15b60",
+      "published_sha256": "24ae2b0af3c592a9770e0109e0d26b6b9f0ef7f01f23b279542a4d47bcb1e099",
+      "normalization": {}
+    },
+    {
+      "file": "logs/init.log",
+      "source_file": "init.log",
+      "source_sha256": "c952050e94a62a8effaf63ddf21a1c4f0cdd756151aabe8acf01c23bc1d39da1",
+      "published_sha256": "b9e2b61b475a295d721b5fc757fc301cbbd568cdba5ea6306a3aa9b1a6eecfa9",
+      "normalization": {
+        "trailing_whitespace_lines": 1
+      }
+    },
+    {
+      "file": "logs/build.log",
+      "source_file": "build.log",
+      "source_sha256": "1375ed8f3a344339344832f39c28b2e9f9e68d5d5d4aab9a0e14188807dcc9ba",
+      "published_sha256": "b71c313c1e6e4b287c6b5ea88702709de686347faeabc4c95398e9804b805b11",
+      "normalization": {
+        "workstation_paths": 1
+      }
+    },
+    {
+      "file": "logs/combined-build.log",
+      "source_file": "integration-build.log",
+      "source_sha256": "abf5a03282070acf3b55796748895b88925e29835da0c4993121d5b41a3f7eb2",
+      "published_sha256": "edcc971327b6e2a785da4f1646d9294c4747fc50567c75a661c42138d1793cd0",
+      "normalization": {
+        "workstation_paths": 3
+      }
+    },
+    {
+      "file": "logs/by-owner-steps.log",
+      "source_file": "by-owner-scenario.log",
+      "source_sha256": "d4243ae1ca5c690dc18738371e353bfc08e03a738e9654dcec6473e9ea55c165",
+      "published_sha256": "d4243ae1ca5c690dc18738371e353bfc08e03a738e9654dcec6473e9ea55c165",
+      "normalization": {}
+    },
+    {
+      "file": "logs/by-owner.log",
+      "source_file": "c4d77f7-by-owner-ssa-agent.log",
+      "source_sha256": "1f3a0690a003fd0b1a84944f7f9d165009c5858d848c3ac338ad8b9869a213b5",
+      "published_sha256": "eb920527d72dc944086869ed800ef94f216479f67a82a0b3e9ec1e967fe0a2d7",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/hot-reload.log",
+      "source_file": "c4d77f7-hot-reconfiguration-agent.log",
+      "source_sha256": "d915fe41cc95c2062444e5741bcfe209cef05f74bd86426af1b335ec484869c3",
+      "published_sha256": "998603a6c4fc62e10984f86d419bc59f52760be6dacc45046f2f901c59572adb",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/client-kcp-kcp.log",
+      "source_file": "c4d77f7-client-side-kcp-kcp-agent.log",
+      "source_sha256": "2cc076f7b014d73ec7d3fbaa5373cb4fe2110edd525c169b3be90ae4dd18add6",
+      "published_sha256": "bed32b05fbdcc434b4c46f6d51199196485510a2299ceccbead123e8f956b15e",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/client-kcp-service.log",
+      "source_file": "c4d77f7-client-side-kcp-service-agent.log",
+      "source_sha256": "b1410bab27d27f6e9ef74b2ce15a0123a7b730305a14772162facef0a3cfc80c",
+      "published_sha256": "f7ba97c5547f1495c2fc9b7b8cc9b0268138687980305b3a9384d119d4f9462e",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/client-service-service.log",
+      "source_file": "c4d77f7-client-side-service-service-agent.log",
+      "source_sha256": "da2dcb4f797dfaed6a32f5081dd3bcb5c8ce744981f40583f5480201e65b725b",
+      "published_sha256": "eb5c70bf6636216ed27485c06533aa95d9814f5e5c46f729053703ace5c65d70",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/client-service-kcp.log",
+      "source_file": "c4d77f7-client-side-service-kcp-agent.log",
+      "source_sha256": "552dc6eee44ac9a47e8473f8d0b3aaf2690d58f944f803018cb34cce2824a0dd",
+      "published_sha256": "1d3be888f9679695437ded557e137af8e84992bf8252f4e194a45de74e6f5645",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/client-legacy-kcp.log",
+      "source_file": "c4d77f7-client-side-legacy-kcp-agent.log",
+      "source_sha256": "06da07e1482a67219cba803972e26899b3c84966e71607ecf87104639135d020",
+      "published_sha256": "514adecff3ceb2b8b726f9a6d620b2159aaacb080574a3e4671752a758f806af",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/client-legacy-service.log",
+      "source_file": "c4d77f7-client-side-legacy-service-agent.log",
+      "source_sha256": "fed694b0c8ae335becc86ed7cf7a3133df0fa96d631b4f1a917e2db430e48ac3",
+      "published_sha256": "8f05fd3e29a86a8f58f7b481ada477752592f449b2dfde5e86a9297b1bfc3fa1",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/client-disabled.log",
+      "source_file": "c4d77f7-client-side-disabled-agent.log",
+      "source_sha256": "33e61b1c011e4167a522fb3555daf2d363721c03513e26c5c89fb842c460e75d",
+      "published_sha256": "609baca283dbc339f2dcda39e3652f0482cd619b86dd298ef32f880866c12b2a",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/client-omitted.log",
+      "source_file": "c4d77f7-client-side-omitted-agent.log",
+      "source_sha256": "1754fadd5ab6629fd34864b5304234dcea3d36d0bfdb1db1efe23707410ea809",
+      "published_sha256": "073f39e5d9b114ea8a8ee6c13f652cbc557d08222a926a79c9eaf695ec06495a",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/client-no-watch.log",
+      "source_file": "c4d77f7-client-side-no-watch-agent.log",
+      "source_sha256": "d7a089f04c71c7bf20690709958af9a9fe97b1c9daa8f31714a01b9d0f0a9352",
+      "published_sha256": "131a92e5ad4d7e777a1f6962319916c0c411995b9010bc4722e50cdee5dc5f3f",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/ssa-kcp-kcp.log",
+      "source_file": "c4d77f7-ssa-standalone-kcp-kcp-agent.log",
+      "source_sha256": "f4fff5e481a6a9c3f5ae766455f965c4c6644992a327dc593985ce9a3e1a0a3a",
+      "published_sha256": "a5f9ac005cdb1a97bbb2ace11aeb17218f8fd7929a8d376619e8fd72f031aec8",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/ssa-kcp-service.log",
+      "source_file": "c4d77f7-ssa-standalone-kcp-service-agent.log",
+      "source_sha256": "27dde4cd6f283841f5dd0808ea31c16241fb4e9271a273be1ba52fc34460b8ee",
+      "published_sha256": "d76c10e5361e7b835e8abfaab0cc465440a28da13a29927cc09cbded57016830",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/ssa-service-service.log",
+      "source_file": "c4d77f7-ssa-standalone-service-service-agent.log",
+      "source_sha256": "36e56b5f3e6b4372286f1fd03e88761b8281c8f66b14c40bf79a0a1493d8d1fa",
+      "published_sha256": "000683cc801ceb39f75214263b90c2a276a3c637ac1146e5ba5c3cbab81bc704",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/ssa-service-kcp.log",
+      "source_file": "c4d77f7-ssa-standalone-service-kcp-agent.log",
+      "source_sha256": "83e63287c7a3ebfa5305dcee3d1b1ee022bf11f29cff45eb9d513ab39d08b162",
+      "published_sha256": "3510abec2c8caf8de455e256e6111c20261b10553e0a7577dd8617183592e169",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/combined-kcp-kcp.log",
+      "source_file": "c4d77f7-plus-f0db0c6-ssa-kcp-kcp-agent.log",
+      "source_sha256": "d726d42bdd2128c433bd03908c94c7de5ce789c3bd52191a835c3905b1f6f4e3",
+      "published_sha256": "e7ccd5dd3ba1c21c355f0dd57a3bcd9d1899c550356da519b8bc5ff5063934c5",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/combined-kcp-service.log",
+      "source_file": "c4d77f7-plus-f0db0c6-ssa-kcp-service-agent.log",
+      "source_sha256": "aa8b5f023d9e9b6954be21e3df53f5d4b5bfe40a4557205fd69a35bbe7d27e1d",
+      "published_sha256": "a0325ad807052a7e797ce88837c580afd04f762aeb72b82b22aa3ea5c4c53414",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/combined-service-service.log",
+      "source_file": "c4d77f7-plus-f0db0c6-ssa-service-service-agent.log",
+      "source_sha256": "08c2912ae6276439e546cfb4fab9917b7e7a8574be0b45a8177d8719d2093f39",
+      "published_sha256": "195fa8e286f99db0d338b2a1471f57c7e72a8fd3dbee48c947d1cdf5e10c5786",
+      "normalization": {
+        "private_addresses": 2
+      }
+    },
+    {
+      "file": "logs/combined-service-kcp.log",
+      "source_file": "c4d77f7-plus-f0db0c6-ssa-service-kcp-agent.log",
+      "source_sha256": "b5aa0e8a1bb8a358736d9c3ecf38dddeae780379977374e3ced3871a30e46533",
+      "published_sha256": "a2410b97064bcd9e3e63c5d45393aee40803ff94135c16c0a4a30d7487e9a300",
+      "normalization": {
+        "private_addresses": 2
+      }
+    }
+  ],
+  "manifest_scope": "Hashes cover recorded result and log artifacts; reproduction scripts and report prose are separate."
+}

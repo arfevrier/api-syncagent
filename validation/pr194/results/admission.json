@@ -1,0 +1,56 @@
+[
+  {
+    "case": "legacy-kcp-no-watch",
+    "accepted": true,
+    "status": "PASS",
+    "rejection": null
+  },
+  {
+    "case": "legacy-service-with-watch",
+    "accepted": true,
+    "status": "PASS",
+    "rejection": null
+  },
+  {
+    "case": "new-reverse-with-watch",
+    "accepted": true,
+    "status": "PASS",
+    "rejection": null
+  },
+  {
+    "case": "reverse-without-watch",
+    "accepted": false,
+    "status": "PASS",
+    "rejection": "The PublishedResource \"pr194-validation-reverse-without-watch\" is invalid: spec.related[0]: Invalid value: watch must be configured when status synchronization involves the service side as an origin"
+  },
+  {
+    "case": "origin-without-enable",
+    "accepted": false,
+    "status": "PASS",
+    "rejection": "The PublishedResource \"pr194-validation-origin-without-enable\" is invalid: spec.related[0]: Invalid value: syncStatus must be true when syncStatusOrigin is configured"
+  },
+  {
+    "case": "origin-with-disabled-enable",
+    "accepted": false,
+    "status": "PASS",
+    "rejection": "The PublishedResource \"pr194-validation-origin-with-disabled-enable\" is invalid: spec.related[0]: Invalid value: syncStatus must be true when syncStatusOrigin is configured"
+  },
+  {
+    "case": "unknown-status-origin",
+    "accepted": false,
+    "status": "PASS",
+    "rejection": "The PublishedResource \"pr194-validation-unknown-status-origin\" is invalid: \n* spec.related[0].syncStatusOrigin: Unsupported value: \"unknown\": supported values: \"service\", \"kcp\"\n* <nil>: Invalid value: null: some validation rules were not checked because the object was invalid; correct the existing errors to complete validation"
+  },
+  {
+    "case": "empty-watch",
+    "accepted": false,
+    "status": "PASS",
+    "rejection": "The PublishedResource \"pr194-validation-empty-watch\" is invalid: spec.related[0].watch: Invalid value: exactly one of byOwner or bySelector must be set"
+  },
+  {
+    "case": "string-syncStatus-rejected",
+    "accepted": false,
+    "status": "PASS",
+    "rejection": "The PublishedResource \"pr194-validation-string-syncStatus-rejected\" is invalid: \n* metadata.name: Invalid value: \"pr194-validation-string-syncStatus-rejected\": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')\n* spec.related[0].syncStatus: Invalid value: \"string\": spec.related[0].syncStatus in body must be of type boolean: \"string\"\n* <nil>: Invalid value: null: some validation rules were not checked because the object was invalid; correct the existing errors to complete validation"
+  }
+]

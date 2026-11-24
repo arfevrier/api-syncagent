@@ -1,0 +1,5 @@
+make: Entering directory '${INTEGRATION_WORKTREE}'
+go build -v -ldflags '-extldflags '-static' -X github.com/kcp-dev/api-syncagent/internal/version.gitVersion=v0.7.0-14-gc4d77f7 -X github.com/kcp-dev/api-syncagent/internal/version.gitHead=c4d77f7f44b8f44fac5fd1ce864b19a787b8aa82 -w'  -o ${RUN_STATE}/bin-with-ssa-fix/api-syncagent ./cmd/api-syncagent
+github.com/kcp-dev/api-syncagent/internal/sync
+github.com/kcp-dev/api-syncagent/internal/controller/sync
+make: Leaving directory '${INTEGRATION_WORKTREE}'
